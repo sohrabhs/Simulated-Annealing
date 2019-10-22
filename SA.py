@@ -1,6 +1,6 @@
 import numpy as np
 
-class SimulatedAnnealing(Optimization):
+class SimulatedAnnealing():
     def __init__(self, iteration=100, subIteration=10, T0=10, alpha=0.99, minimization=True, silent=True):
         self.minimization = minimization
         self.silent = silent
@@ -12,7 +12,6 @@ class SimulatedAnnealing(Optimization):
         self.objs = [0] * self.iteration
         self.bestSolution = None
         self.bestObj = None
-        super().__init__()
 
     def sortedFirstBySecond(self, first, second, reverse=False):
         index = np.array(sorted(range(len(second)), key=lambda k: second[k], reverse=reverse))
